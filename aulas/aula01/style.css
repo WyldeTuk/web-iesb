@@ -1,0 +1,12 @@
+html {
+    width: 100%;
+}
+
+#titulo {
+    font-size: 24em;
+    color: springgreen;
+}
+
+.justificado {
+    text-align: justify;
+}
