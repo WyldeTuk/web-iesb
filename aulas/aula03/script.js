@@ -37,7 +37,23 @@ function Formulario() {
 }
 
 function efetuarLogin(event) {
-    console.log(event); 
+    event.preventDefault();
+
+    const inputEmail = document.querySelector('input[type="email"]');
+
+    if (!inputEmail.value) {
+        const erro = document.createElement('p');
+        erro.innerText = 'Email é obrigatorio';
+        inputEmail.parentElement.appendChild(erro);
+        inputEmail.focus();
+    }
+
+    const inputSenha = document.querySelector('input[type="password"]');
+
+    fetch('http://localhost/users/login',{
+        method: 'POST',
+        body:{email: inputEmail.value, senha:inputSenha.value}
+    });
 }
 
 function Principal() {
