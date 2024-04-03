@@ -1,0 +1,89 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: auto;
+    color: #acdce2;
+    display: flex;
+    flex-direction: column;
+    background-color: #060213;
+}
+
+header{
+    padding: 0px 12px;
+    background-color:#13a0b349 ;
+    border-bottom: solid 2px ;
+    border-color: rgb(255, 0, 0);
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+main{
+    flex: 8;
+    padding: 0px 12px;
+}
+
+footer{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    width: 20rem;
+    padding-left: 16px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+#titulo{
+    color: aliceblue;
+    font-size: 1.25rem;
+}
+
+a {
+    color:  #afc071;
+    text-decoration: none;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    border: solid 1px #232D36;
+}
+
+input{
+    display: block;
+    font-size: 1rem;
+    line-height: 1.25;
+    padding: 0.625rem;
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+input[type="submit"]{
+    background-color: #00c3ff;
+    border: solid 1px #1900ff;
+    border-radius: 0.325rem;
+}
+
+.ativo{
+    color: #e5ff00;
+}
+
+h2{
+    color: #ffceff;
+    display: flex;
+    justify-content: center;
+}
+
+#sinopse{
+    padding: 10px;
+    border: solid 1px #c8ff009a;
+}
