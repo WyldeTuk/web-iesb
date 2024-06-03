@@ -1,17 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { MovieContext } from '../context/MovieContext';
 
 const Watched = () => {
-  const { watchedMovies, deleteWatchedMovie } = useContext(MovieContext);
+  const { watchedMovies, deleteWatchedMovie, sortWatchedMoviesAlphabetically, searchWatchedMovies } = useContext(MovieContext);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+    searchWatchedMovies(e.target.value);
+  };
 
   return (
     <div>
-      <h3>Watched Movies/Series</h3>
+      <h3>Filmes/Series Assistidos</h3>
+      <input
+        class="busca"
+        type="text"
+        placeholder="Buscar..."
+        value={searchQuery}
+        onChange={handleSearch}
+      />
+      <button onClick={sortWatchedMoviesAlphabetically}>Organizar</button>
       <ul>
         {watchedMovies.map((movie, index) => (
           <li key={index}>
             {movie.title} - {movie.genre}
-            <button onClick={() => deleteWatchedMovie(index)}>Delete</button>
+            <button class="botaoDel"  onClick={() => deleteWatchedMovie(index)}>Deletar</button>
           </li>
         ))}
       </ul>
@@ -20,4 +34,3 @@ const Watched = () => {
 };
 
 export default Watched;
-

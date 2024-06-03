@@ -12,20 +12,21 @@ const MovieList = () => {
 
   return (
     <div>
-      <h3>Movie/Series List</h3>
+      <h3>Lista de Filmes/Series</h3>
       <input
+        class="busca"
         type="text"
-        placeholder="Search by title..."
+        placeholder="Buscar..."
         value={searchQuery}
         onChange={handleSearch}
       />
-      <button onClick={sortMoviesAlphabetically}>Sort Alphabetically</button>
+      <button onClick={sortMoviesAlphabetically}>Organizar</button>
       <ul>
         {movies.map((movie, index) => (
           <li key={index}>
             {movie.title} - {movie.genre}
-            <button onClick={() => markAsWatched(index)}>Mark as Watched</button>
-            <button onClick={() => deleteMovie(index)}>Delete</button>
+            <button class="botaoview" onClick={() => markAsWatched(index)}>Visto</button>
+            <button class="botaoDel" onClick={() => deleteMovie(index)}>Deletar</button>
           </li>
         ))}
       </ul>

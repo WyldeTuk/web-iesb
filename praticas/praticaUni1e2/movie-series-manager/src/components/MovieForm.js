@@ -19,10 +19,10 @@ const MovieForm = ({ addMovie }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3>Add New Movie/Series</h3>
+      <h3>Add filmes/Series</h3>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div>
-        <label>Title:</label>
+        <label>Titulo:</label>
         <input
           type="text"
           value={title}
@@ -30,7 +30,7 @@ const MovieForm = ({ addMovie }) => {
         />
       </div>
       <div>
-        <label>Genre:</label>
+        <label>Gênero:</label>
         <input
           type="text"
           value={genre}

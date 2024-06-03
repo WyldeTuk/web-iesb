@@ -6,6 +6,7 @@ const MovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
   const [watchedMovies, setWatchedMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [watchedSearchQuery, setWatchedSearchQuery] = useState('');
 
   const addMovie = (movie) => {
     setMovies([...movies, movie]);
@@ -29,16 +30,39 @@ const MovieProvider = ({ children }) => {
     setMovies([...movies].sort((a, b) => a.title.localeCompare(b.title)));
   };
 
+  const sortWatchedMoviesAlphabetically = () => {
+    setWatchedMovies([...watchedMovies].sort((a, b) => a.title.localeCompare(b.title)));
+  };
+
   const searchMovies = (query) => {
     setSearchQuery(query);
+  };
+
+  const searchWatchedMovies = (query) => {
+    setWatchedSearchQuery(query);
   };
 
   const filteredMovies = searchQuery
     ? movies.filter(movie => movie.title.toLowerCase().includes(searchQuery.toLowerCase()))
     : movies;
 
+  const filteredWatchedMovies = watchedSearchQuery
+    ? watchedMovies.filter(movie => movie.title.toLowerCase().includes(watchedSearchQuery.toLowerCase()))
+    : watchedMovies;
+
   return (
-    <MovieContext.Provider value={{ movies: filteredMovies, addMovie, deleteMovie, watchedMovies, deleteWatchedMovie, markAsWatched, sortMoviesAlphabetically, searchMovies }}>
+    <MovieContext.Provider value={{
+      movies: filteredMovies,
+      addMovie,
+      deleteMovie,
+      watchedMovies: filteredWatchedMovies,
+      deleteWatchedMovie,
+      markAsWatched,
+      sortMoviesAlphabetically,
+      sortWatchedMoviesAlphabetically,
+      searchMovies,
+      searchWatchedMovies
+    }}>
       {children}
     </MovieContext.Provider>
   );
