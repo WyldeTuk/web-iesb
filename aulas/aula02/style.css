@@ -1,0 +1,42 @@
+html{
+    height: 100%;
+
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    flex: 3;
+    background-color: rgb(119, 0, 255);
+    color: antiquewhite;
+}
+
+main{
+    flex: 6;
+}
+
+footer{
+    flex: 1;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    min-width: 200px;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav ul li a {
+color:chartreuse
+}
