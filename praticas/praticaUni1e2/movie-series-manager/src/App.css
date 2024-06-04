@@ -48,12 +48,12 @@ form div {
   margin-bottom: 1rem;
 }
 
-form label {
+label {
   display: block;
   margin-bottom: 0.5rem;
 }
 
-form input {
+input {
   width: 98%;
   padding: 0.5rem;
   border: 1px solid #cccbcb;
@@ -105,4 +105,25 @@ ul li {
 .botaoDel{
   margin: 0 0.5rem;
   background-color: #ff0000;
+}
+
+.titulo{
+  margin:  1rem;
+}
+
+.loginP{
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.inputLogin{
+  margin-bottom: 0.5rem;
 }
